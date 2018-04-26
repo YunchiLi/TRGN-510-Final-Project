@@ -15,6 +15,7 @@ library(ComplexHeatmap)
 library(circlize)
 library(colorspace)
 library(GetoptLong)
+install.packages("colourpiker")
 library(colourpicker)
 setwd("~/TRGN 510/");
 load("mydataset.RData");
