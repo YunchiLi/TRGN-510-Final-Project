@@ -1,0 +1,105 @@
+---
+title: "Plot"
+author: "Yunchi Li"
+date: "4/23/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(dplyr)
+setwd("/Users/yunchili/TRGN 510")
+sample01 <- read.csv('04cd454e-776c-44be-aa99-06bcc5e3a1e0.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample02 <- read.csv('11d18719-8168-4d05-9dff-8305c0d8db55.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample03 <- read.csv('15b87438-308c-491e-ac85-6fb75a470182.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample04 <- read.csv('16f56f1e-4493-4bec-bf77-25107ef38f20.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample05 <- read.csv('1ca44e12-b515-4d1a-8835-26df82e58104.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample06 <- read.csv('1d0ed301-414c-4945-a65b-5bfba4360d65.FPKM 2.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample07 <- read.csv('30d385a8-c4dd-463e-8ef0-091a3a6bbf68.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample08 <- read.csv('393d326f-f2ad-4e0a-83bc-d41421dbd25e.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample09 <- read.csv('3aeafc0b-b413-4dff-b633-6faef3a32bc3.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample10 <- read.csv('47efad89-24a3-4864-8a60-9315167f304f.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample11 <- read.csv('4cfdff73-3514-4fdf-8d19-4422b0571d1f.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample12 <- read.csv('57817aa5-3bb6-47e7-a344-2857668dc485.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample13 <- read.csv('57817aa5-3bb6-47e7-a344-2857668dc485.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample14 <- read.csv('5ae0ac27-e1cc-445f-b75e-9f2484dc94ad.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample15 <- read.csv('5d418e71-4e7d-4111-8aad-4ea782fd87b6.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample16 <- read.csv('617229ba-ee07-4b63-9e1b-85f7cd828389.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample17 <- read.csv('617229ba-ee07-4b63-9e1b-85f7cd828389.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample18 <- read.csv('6b0df792-5601-4d5d-8844-4a66391dbcaf.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample19 <- read.csv('6b5d1d9a-7040-4ddd-93dd-4b31b6ae5926.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample20 <- read.csv('73006ea0-cf62-4360-ac60-c6dab6fb03b5.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample21 <- read.csv('7794958e-853e-4599-a30c-1eee64e28739.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample22 <- read.csv('7a241ae9-e218-4479-8096-d855cf3e8565.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample23 <- read.csv('80b5f1bb-3134-438d-8918-b63c73a44e0f.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample24 <- read.csv('82d61f67-f56e-4855-aa2e-44350982f8af.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample25 <- read.csv('8ab2317c-97ce-480d-9ab0-c51047031cde.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample26 <- read.csv('94919679-9aeb-411a-b9fd-a435bcd87d66.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample27 <- read.csv('9576cf20-e04a-4c06-8988-8d38c2c017aa.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample28 <- read.csv('aaffafa9-2aa2-45da-b8ca-78c0f2b52303.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample29 <- read.csv('c0641ad4-f73b-4c12-b9f0-037a185bc5b7.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample30 <- read.csv('c39f5ea8-07e5-4959-b3db-0c82f87b79d8.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample31 <- read.csv('cc16a3ce-4569-47c1-8155-1f6d1e64f999.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample32 <- read.csv('cc16a3ce-4569-47c1-8155-1f6d1e64f999.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample33 <- read.csv('d1463bd7-8432-4e7d-b92b-eb8fc1f72be1.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample34 <- read.csv('d7aa7724-8435-4b08-b4b2-ea0eb86ea184.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample35 <- read.csv('dba3c358-1f4a-417f-aafe-edc0ad999b15.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample36 <- read.csv('f1fddf0c-babe-4c67-bd3b-5633e17086a4.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+sample37 <- read.csv('f8dd2f44-5b20-43fa-8686-aa4e2602c5ab.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
+```
+
+
+# Join the datasets into one dataframe
+```{r}
+samples <- bind_cols(sample01,sample02,sample03,sample04,sample05,sample06,sample07,sample08,sample09,sample10,sample11,sample12,sample13,sample14,sample15,sample16,sample17,sample18,sample19,sample20,sample21,sample22,sample23,sample24,sample25,sample26,sample27,sample28,sample29,sample30,sample31,sample32,sample33,sample34,sample35,sample36,sample37)
+rownames(samples)<-rownames(sample01)
+```
+
+# Add 1 to every column 
+```{r}
+df <- samples
+samples2 <- df + 1
+```
+
+# Log2 transform the data
+```{r}
+log2 <- log(samples2,2)
+```
+
+# build up a fast test dataframe
+```{r}
+test <- log2[1:1000,]
+```
+
+```{r}
+library(plotly)
+d <- density(test$V2) # returns the density data
+ plot(d) # plots the results
+test.log.small <- test[seq(1, nrow(test), 20), ]
+pca <- prcomp(test.log.small,center = TRUE,scale. = TRUE)
+pcadf<-data.frame(pca$rotation)
+  plot_ly(data = pcadf, x = ~PC1, y = ~PC2, text = rownames(pcadf))
+  plot_ly(pcadf, x = ~PC1, y = ~PC2, z = ~PC3, color = ~PC4, colors = c('#BF382A', '#0C4B8E')) %>%
+ add_markers() %>%
+ layout(scene = list(xaxis = list(title = 'PC1'),
+ yaxis = list(title = 'PC2'),
+ zaxis = list(title = 'PC3')))
+```
+
+```{r}
+library(made4)
+library(ggplot2)
+library(reshape2)
+corr <- cor(test)
+melted_corr <- melt(corr)
+p<-ggplot(melted_corr , aes(x = Var1, y = Var2)) + geom_raster(aes(fill = value)) + scale_fill_gradient2(low="navy", mid="white", high="red", midpoint=0.5) + theme( plot.title = element_blank(),axis.text.x = element_blank(), axis.text.y = element_blank(), axis.title.y = element_blank(), axis.title.x = element_blank())
+
+ggplotly(p)
+```
+
+
+
