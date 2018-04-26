@@ -10,6 +10,7 @@
 library(shiny);
 library(ggplot2);
 library(plotly);
+install.packages("colourpiker")
 library(colourpicker)
 setwd("~/TRGN 510/");
 load("mydataset.RData");
