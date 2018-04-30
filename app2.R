@@ -17,7 +17,7 @@ library(colorspace)
 library(GetoptLong)
 install.packages("colourpiker")
 library(colourpicker)
-setwd("~/TRGN 510/");
+setwd("~/TRGN510/");
 load("mydataset.RData");
 
 # Define UI for application that draws a histogram
