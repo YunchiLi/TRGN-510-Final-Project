@@ -23,7 +23,7 @@ install Rstudio, first. And then import the following data into it. These sample
 ## Running the tests
 Open app.R in Rstudio and run it.
 Open Plot.Rmd in Rstudio and run the document.
-
+Open app.R on the server, (click [here](https://http://52.14.202.125:3838/yunchili/finalproject/)
 
 ## Analysis
 
