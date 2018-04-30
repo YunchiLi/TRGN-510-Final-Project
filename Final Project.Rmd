@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # load the data
 ```{r}
 library(dplyr)
-setwd("/Users/yunchili/TRGN 510")
+setwd("/Users/yunchili/TRGN510")
 sample01 <- read.csv('04cd454e-776c-44be-aa99-06bcc5e3a1e0.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
 sample02 <- read.csv('11d18719-8168-4d05-9dff-8305c0d8db55.FPKM.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
 sample03 <- read.csv('15b87438-308c-491e-ac85-6fb75a470182.FPKM-UQ.txt',header = FALSE, sep = "", quote = "\"", dec = ".", fill = TRUE, row = 1)
