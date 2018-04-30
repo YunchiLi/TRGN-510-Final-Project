@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(dplyr)
-setwd("/Users/yunchili/TRGN 510")
+setwd("/Users/yunchili/TRGN510")
 
 load("mydataset.RData")
 library(made4)
